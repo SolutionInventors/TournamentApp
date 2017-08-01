@@ -222,18 +222,5 @@ public class Competitor
 		return getGoalsScored() - getGoalsConceded();
 	}
 
-	public static void main( String...  arg ) 
-	{
-		JFileChooser chooser = new JFileChooser();
-		int val = chooser.showOpenDialog( null );
-		
-		File file = chooser.getSelectedFile();
-		Competitor chidi = new Competitor( "Oguejiofor" , "Chidiebere" , file );
-		chidi.incrementWins();
-		chidi.incrementWins();
-		chidi.incrementDraw();
-		chidi.setPoint( 3 , 1 , 0);
-		System.out.println( chidi.getPoint() );
-	}
 	
 }
