@@ -8,7 +8,11 @@
 package com.solutioninventors.tournament.mainClasses;
 
 import java.io.File;
-import java.nio.file.Files;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 
 import javax.swing.JFileChooser;
 
@@ -168,8 +172,23 @@ public class Competitor
 
 	private void copyFile(File fileToCopy , File fileToPaste)
 	{
-//		copy code loading..
-		
+		try
+		{
+			FileChannel input = new FileInputStream( fileToCopy ).getChannel();
+			FileChannel output = new FileOutputStream( fileToPaste ).getChannel() ;
+			output.transferFrom( input ,  0 , input.size() );
+			
+		}
+		catch (FileNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
