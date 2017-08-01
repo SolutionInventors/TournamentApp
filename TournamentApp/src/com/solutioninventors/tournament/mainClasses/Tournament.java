@@ -5,7 +5,7 @@
  * 8:07:23 AM
  */
 
-package com.solutioninventors.tournament;
+package com.solutioninventors.tournament.mainClasses;
 
 public class Tournament
 {
